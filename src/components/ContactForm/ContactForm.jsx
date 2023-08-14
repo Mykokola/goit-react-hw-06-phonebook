@@ -2,17 +2,11 @@ import React from "react"
 import { FormTitle,FormContact,FormButton} from "./ContactForm.Styled"
 import { useState } from "react";
 export const ContactForm = ({addContacts}) => {
-  // ({number,name,addContacts,addFormNameTel}) =>
-  // state = {
-  //   name: '',
-  //   number: '',
-  // }
   const [name,setName] = useState('')
   const [number,setNumber] = useState('')
  const addFormNameTel = e => {
     if(e.target.name==='name') setName(e.target.value)
     else if(e.target.name==='number') setNumber(e.target.value)
-    //this.setState({ [e.target.name]: e.target.value });
   };
 
 const  submitForm = e => {
@@ -24,8 +18,6 @@ const  submitForm = e => {
     setName('')
     setNumber('')
   };
-  // render(){ 
-  //   const {name,number} = this.state
   return ( 
         <>
         <FormTitle>Phone Book</FormTitle>
