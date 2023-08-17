@@ -17,7 +17,6 @@ export function ContactForm() {
       name: '',
       number: '',
     },
-    mode: 'onTouched',
   });
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
