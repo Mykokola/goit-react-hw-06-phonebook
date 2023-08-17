@@ -5,13 +5,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getContactsItems, addContact } from 'redux/taskSlice';
 import { useEffect } from 'react';
 export function ContactForm() {
+    // eslint-disable-next-line no-unused-vars
+
   const dispatch = useDispatch();
   const contactsValue = useSelector(getContactsItems);
-  // eslint-disable-next-line no-unused-vars
   const {
     register,
+      // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line no-unused-vars
+
     handleSubmit,
+  // eslint-disable-next-line no-unused-vars
     formState: { errors },
+      // eslint-disable-next-line no-unused-vars
+
     reset,
     formState,
   } = useForm({
