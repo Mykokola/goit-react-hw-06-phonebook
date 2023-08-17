@@ -1,23 +1,38 @@
-import { nanoid } from 'nanoid';
-import PropTypes from 'prop-types';
-import{ContactListBtn,ContactListUl} from './ContactList.Styled'
-export const ContactList = ({contacts,deleteContact}) => {
-    return (
-        <>
-            <ContactListUl>
-          {contacts.map(e => {
-            return (
-              <li key={nanoid()}>
-                {e.name} : {e.number}
-                <ContactListBtn onClick={deleteContact} type='button'>delete</ContactListBtn>
-              </li>
-            );
-          })}
-        </ContactListUl>
-        </>
-    )
-}
-ContactList.propTypes = {
-  contacts: PropTypes.array.isRequired,
-  deleteContact: PropTypes.func.isRequired
+import { ContactListBtn, ContactListUl } from './ContactList.Styled';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  getFilterValue,
+  getContactsItems,
+  deleteContact,
+} from 'redux/taskSlice';
+
+export function ContactList() {
+  const dispatch = useDispatch();
+  const contactValue = useSelector(getContactsItems);
+  const filter = useSelector(getFilterValue);
+  const filterContancts = e => {
+    return contactValue.filter(e =>
+      e.name.toLowerCase().includes(filter.toLocaleLowerCase())
+    );
+  };
+  const contactArry = filterContancts();
+  return (
+    <>
+      <ContactListUl>
+        {contactArry.map(({ id, name, number }) => {
+          return (
+            <li key={id}>
+              {name} : {number}
+              <ContactListBtn
+                onClick={() => dispatch(deleteContact({ id: id }))}
+                type="button"
+              >
+                delete
+              </ContactListBtn>
+            </li>
+          );
+        })}
+      </ContactListUl>
+    </>
+  );
 }
