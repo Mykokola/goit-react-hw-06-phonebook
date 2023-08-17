@@ -9,6 +9,8 @@ export function ContactForm() {
 
   const dispatch = useDispatch();
   const contactsValue = useSelector(getContactsItems);
+    // eslint-disable-next-line no-unused-vars
+
   const {
     register,
       // eslint-disable-next-line no-unused-vars
