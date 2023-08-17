@@ -18,6 +18,7 @@ export function ContactForm() {
 
     handleSubmit,
   // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line
     formState: { errors },
       // eslint-disable-next-line no-unused-vars
 
@@ -73,4 +74,6 @@ export function ContactForm() {
       </FormContact>
     </>
   );
+    // eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line
 }
