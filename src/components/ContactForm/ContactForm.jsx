@@ -10,9 +10,8 @@ export function ContactForm() {
   const {
     register,
     handleSubmit,
-   /* eslint-disable no-unused-vars */
+    // eslint-disable-next-line no-unused-vars
     formState: { errors },
-    /* eslint-enable no-unused-vars */
     reset,
     formState,
   } = useForm({
