@@ -10,7 +10,9 @@ export function ContactForm() {
   const {
     register,
     handleSubmit,
+   /* eslint-disable no-unused-vars */
     formState: { errors },
+    /* eslint-enable no-unused-vars */
     reset,
     formState,
   } = useForm({
@@ -29,7 +31,7 @@ export function ContactForm() {
   const submitForm = data => {
     const loverName = data.name.toLowerCase();
     if (contactsValue.find(item => item.name.toLowerCase() === loverName))
-      return console.log(errors);
+      return console.log('this name already exists');
     dispatch(addContact(data));
   };
 
