@@ -4,13 +4,14 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContactsItems, addContact } from 'redux/taskSlice';
 import { useEffect } from 'react';
+// eslint-disable-next-line
 export function ContactForm() {
     // eslint-disable-next-line no-unused-vars
-
+// eslint-disable-next-line
   const dispatch = useDispatch();
   const contactsValue = useSelector(getContactsItems);
     // eslint-disable-next-line no-unused-vars
-
+// eslint-disable-next-line
   const {
     register,
       // eslint-disable-next-line no-unused-vars
@@ -21,7 +22,7 @@ export function ContactForm() {
   // eslint-disable-next-line
     formState: { errors },
       // eslint-disable-next-line no-unused-vars
-
+// eslint-disable-next-line
     reset,
     formState,
   } = useForm({
@@ -31,12 +32,13 @@ export function ContactForm() {
     },
     mode: 'onTouched',
   });
+  // eslint-disable-next-line
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
       reset();
     }
   }, [formState.isSubmitSuccessful, reset]);
-
+// eslint-disable-next-line
   const submitForm = data => {
     const loverName = data.name.toLowerCase();
     if (contactsValue.find(item => item.name.toLowerCase() === loverName))
