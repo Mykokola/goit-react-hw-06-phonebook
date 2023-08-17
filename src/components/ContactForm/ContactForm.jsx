@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 export function ContactForm() {
   const dispatch = useDispatch();
   const contactsValue = useSelector(getContactsItems);
-  /* eslint-disable no-unused-vars */
+  // eslint-disable-next-line no-unused-vars
   const {
     register,
     handleSubmit,
@@ -21,7 +21,6 @@ export function ContactForm() {
     },
     mode: 'onTouched',
   });
-  /* eslint-enable no-unused-vars */
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
       reset();
