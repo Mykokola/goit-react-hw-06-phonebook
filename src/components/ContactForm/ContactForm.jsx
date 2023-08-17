@@ -10,6 +10,7 @@ export function ContactForm() {
   const {
     register,
     handleSubmit,
+    formState: { errors },
     reset,
     formState,
   } = useForm({
@@ -17,6 +18,7 @@ export function ContactForm() {
       name: '',
       number: '',
     },
+    mode: 'onTouched',
   });
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
@@ -27,7 +29,7 @@ export function ContactForm() {
   const submitForm = data => {
     const loverName = data.name.toLowerCase();
     if (contactsValue.find(item => item.name.toLowerCase() === loverName))
-      return console.log('this name already exists');
+      return console.log(errors);
     dispatch(addContact(data));
   };
 
