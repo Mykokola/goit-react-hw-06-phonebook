@@ -10,7 +10,6 @@ export function ContactForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
     reset,
     formState,
   } = useForm({
